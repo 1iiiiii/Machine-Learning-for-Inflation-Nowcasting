@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.plot.ly/plotly-4.1.1.min.js" charset="utf-8"></script>
+<style>
+body{margin:0;background:#fffdf9;font-family:Archivo, system-ui, -apple-system, 'Segoe UI', sans-serif;color:#6e6559}
+.controls{display:flex;flex-wrap:wrap;gap:14px 28px;padding:10px 16px 0 16px;font-size:13px}
+.controls label{display:flex;align-items:center;gap:8px}
+.controls select{font-family:inherit;font-size:13px;color:#16130f;background:#fff;border:1px solid #b5ab9b;
+  border-radius:4px;padding:3px 6px}
+</style>
+</head><body>
+<div class="controls"><label>Test months: <select id="ctl0" data-name="period"><option value="All test months (Jan 2021 – Oct 2026)" selected>All test months (Jan 2021 – Oct 2026)</option><option value="2021">2021</option><option value="2022 – Oct 2026">2022 – Oct 2026</option></select></label></div>
+<div id="fig"></div>
+<script>
+const FIG = {"data": [{"cliponaxis": false, "hovertemplate": "%{y}<br>RMSE %{x:.2f} percentage points<extra></extra>", "marker": {"color": ["#857b6c", "#857b6c", "#d19a3a", "#2f5d7c", "#2f5d7c", "#2f5d7c", "#a8442a"]}, "name": "All test months (Jan 2021 \u2013 Oct 2026)", "orientation": "h", "showlegend": false, "text": ["0.18", "0.18", "0.15", "0.15", "0.19", "0.19", "0.19"], "textposition": "outside", "x": {"dtype": "f8", "bdata": "IR/0bFZ9xj+jAbwFEhTHP99PjZduEsM/wOyePCzUwj92cRsN4C3IP5tVn6ut2Mc/Vg4tsp3vxz8="}, "y": ["Last print (persistence)", "12-print average", "Reuters poll", "Linear regression", "Random forest", "XGBoost", "Tree models (average)"], "type": "bar", "visible": true}, {"cliponaxis": false, "hovertemplate": "%{y}<br>RMSE %{x:.2f} percentage points<extra></extra>", "marker": {"color": ["#857b6c", "#857b6c", "#d19a3a", "#2f5d7c", "#2f5d7c", "#2f5d7c", "#a8442a"]}, "name": "2021", "orientation": "h", "showlegend": false, "text": ["0.30", "0.34", "0.27", "0.24", "0.37", "0.36", "0.36"], "textposition": "outside", "x": {"dtype": "f8", "bdata": "7uvAOSNK0z/zH9JvXwfWP6foSC7/IdE/qoJRSZ2Azj+F61G4HoXXPz0s1JrmHdc/sp3vp8ZL1z8="}, "y": ["Last print (persistence)", "12-print average", "Reuters poll", "Linear regression", "Random forest", "XGBoost", "Tree models (average)"], "type": "bar", "visible": false}, {"cliponaxis": false, "hovertemplate": "%{y}<br>RMSE %{x:.2f} percentage points<extra></extra>", "marker": {"color": ["#857b6c", "#857b6c", "#d19a3a", "#2f5d7c", "#2f5d7c", "#2f5d7c", "#a8442a"]}, "name": "2022 \u2013 Oct 2026", "orientation": "h", "showlegend": false, "text": ["0.13", "0.12", "0.11", "0.12", "0.12", "0.12", "0.12"], "textposition": "outside", "x": {"dtype": "f8", "bdata": "jSjtDb4wwT/eAgmKH2O+P6d5xyk6krs/78nDQq1pvj+oV8oyxLG+PyEf9GxWfb4/3gIJih9jvj8="}, "y": ["Last print (persistence)", "12-print average", "Reuters poll", "Linear regression", "Random forest", "XGBoost", "Tree models (average)"], "type": "bar", "visible": false}], "layout": {"template": {"data": {"scatter": [{"type": "scatter"}]}}, "font": {"family": "Archivo, system-ui, -apple-system, 'Segoe UI', sans-serif", "size": 13, "color": "#6e6559"}, "title": {"font": {"size": 17, "color": "#16130f"}, "subtitle": {"font": {"size": 12, "color": "#6e6559"}}, "text": "<b>Nowcast error by method</b>", "x": 0.01, "xanchor": "left", "y": 0.97, "yanchor": "top"}, "margin": {"l": 10, "r": 30, "t": 70, "b": 150}, "hoverlabel": {"font": {"family": "Archivo, system-ui, -apple-system, 'Segoe UI', sans-serif", "size": 12, "color": "#16130f"}, "bgcolor": "white", "bordercolor": "#e6dfd2"}, "paper_bgcolor": "#fffdf9", "plot_bgcolor": "#fffdf9", "height": 530, "hovermode": "closest", "xaxis": {"title": {"font": {"color": "#6e6559"}, "text": "RMSE (pct. points)"}, "tickfont": {"color": "#6e6559"}, "showgrid": true, "gridcolor": "#e6dfd2", "gridwidth": 1, "zeroline": false, "showline": true, "linecolor": "#b5ab9b", "ticks": "outside", "tickcolor": "#b5ab9b", "range": [0, 0.43365], "nticks": 5}, "yaxis": {"tickfont": {"color": "#6e6559"}, "title": {}, "showgrid": false, "gridcolor": "#e6dfd2", "gridwidth": 1, "zeroline": false, "showline": true, "linecolor": "#b5ab9b", "ticks": "outside", "tickcolor": "#b5ab9b", "autorange": "reversed", "automargin": true}, "annotations": [{"align": "left", "font": {"color": "#857b6c", "size": 11}, "showarrow": false, "text": "Source: author's calculations;<br>data from LSEG, Cox Automotive<br>and FRED.", "x": 0, "xanchor": "left", "xref": "paper", "y": -0.28, "yanchor": "top", "yref": "paper"}]}};
+const VIS = {"All test months (Jan 2021 \u2013 Oct 2026)": [true, false, false], "2021": [false, true, false], "2022 \u2013 Oct 2026": [false, false, true]};
+const LAY = {};
+const gd = document.getElementById("fig");
+const selects = [...document.querySelectorAll(".controls select")];
+function update() {
+  const key = selects.map(s => s.value).join("|");
+  Plotly.restyle(gd, {visible: VIS[key]});
+  if (LAY[key]) Plotly.relayout(gd, LAY[key]);
+}
+selects.forEach(s => s.addEventListener("change", update));
+Plotly.newPlot(gd, FIG.data, FIG.layout, {responsive: true, displaylogo: false,
+    modeBarButtonsToRemove: ["lasso2d", "select2d", "autoScale2d"]}).then(update);
+</script>
+</body></html>

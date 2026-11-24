@@ -1,0 +1,5 @@
+rule,RMSE,MAE,months
+Last month's print (persistence),0.1193,0.0841,189
+Average of the last 3 prints,0.1247,0.0887,189
+Average of the last 12 prints,0.1102,0.081,189
+Reuters poll (median),0.0941,0.0679,184

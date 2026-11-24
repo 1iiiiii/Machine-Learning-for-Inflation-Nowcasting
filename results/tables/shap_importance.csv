@@ -1,0 +1,9 @@
+,Linear regression,Random forest,Gradient boosting (XGBoost)
+"Core CPI, average of the last 12 prints",0.0861,0.0576,0.0711
+"Core CPI, average of the last 3 prints",0.0203,0.0197,0.0031
+"Core CPI, last month's print",0.0705,0.0314,0.0415
+"Jet fuel, same month",,0.0042,0.0058
+"Jet fuel, one month earlier",,0.0033,0.0026
+"Used-car prices, same month",0.033,,
+"Used-car prices, one month earlier",0.0185,,
+"Used-car prices, two months earlier",0.0139,,

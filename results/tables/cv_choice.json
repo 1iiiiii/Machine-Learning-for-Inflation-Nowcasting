@@ -1,0 +1,71 @@
+{
+  "rf": {
+    "label": "Random forest",
+    "feature_set": "core + jet fuel",
+    "params": {
+      "max_depth": 2,
+      "min_samples_leaf": 5,
+      "max_features": 0.5
+    },
+    "cv_rmse": 0.1051,
+    "fold_rmse": {
+      "2013-14": 0.0769,
+      "2015-16": 0.0812,
+      "2017-18": 0.0849,
+      "2019-20": 0.1772
+    },
+    "winner_without_2019_20": {
+      "feature_set": "core",
+      "params": {
+        "max_depth": 2,
+        "min_samples_leaf": 5,
+        "max_features": 0.5
+      }
+    },
+    "same_winner_without_2019_20": false
+  },
+  "xgb": {
+    "label": "Gradient boosting (XGBoost)",
+    "feature_set": "core + jet fuel",
+    "params": {
+      "n_estimators": 300,
+      "learning_rate": 0.01,
+      "max_depth": 1,
+      "min_child_weight": 5
+    },
+    "cv_rmse": 0.1035,
+    "fold_rmse": {
+      "2013-14": 0.0746,
+      "2015-16": 0.0821,
+      "2017-18": 0.086,
+      "2019-20": 0.1714
+    },
+    "winner_without_2019_20": {
+      "feature_set": "core + used cars + jet fuel",
+      "params": {
+        "n_estimators": 100,
+        "learning_rate": 0.01,
+        "max_depth": 1,
+        "min_child_weight": 5
+      }
+    },
+    "same_winner_without_2019_20": false
+  },
+  "ols": {
+    "label": "Linear regression",
+    "feature_set": "core + used cars",
+    "params": {},
+    "cv_rmse": 0.1012,
+    "fold_rmse": {
+      "2013-14": 0.0756,
+      "2015-16": 0.0841,
+      "2017-18": 0.0871,
+      "2019-20": 0.1579
+    },
+    "winner_without_2019_20": {
+      "feature_set": "core",
+      "params": {}
+    },
+    "same_winner_without_2019_20": false
+  }
+}

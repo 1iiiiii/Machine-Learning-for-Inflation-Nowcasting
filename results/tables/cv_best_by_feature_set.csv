@@ -1,0 +1,13 @@
+model,feature_set,params,2013-14,2015-16,2017-18,2019-20,cv_rmse,cv_rmse_without_2019_20
+ols,core + used cars,{},0.0756,0.0841,0.0871,0.1579,0.1012,0.0823
+ols,core + jet fuel,{},0.0732,0.0869,0.0862,0.1598,0.1015,0.0821
+ols,core + used cars + jet fuel,{},0.0733,0.0858,0.0889,0.1582,0.1015,0.0826
+ols,core,{},0.0757,0.0843,0.0843,0.1634,0.1019,0.0814
+rf,core + jet fuel,"{""max_depth"": 2, ""min_samples_leaf"": 5, ""max_features"": 0.5}",0.0769,0.0812,0.0849,0.1772,0.1051,0.081
+rf,core,"{""max_depth"": 2, ""min_samples_leaf"": 5, ""max_features"": 0.5}",0.0783,0.0768,0.0845,0.1826,0.1055,0.0799
+rf,core + used cars + jet fuel,"{""max_depth"": 2, ""min_samples_leaf"": 5, ""max_features"": 1.0}",0.0785,0.0825,0.0843,0.1779,0.1058,0.0818
+rf,core + used cars,"{""max_depth"": 2, ""min_samples_leaf"": 20, ""max_features"": 0.5}",0.0763,0.0786,0.0862,0.1827,0.1059,0.0804
+xgb,core + jet fuel,"{""n_estimators"": 300, ""learning_rate"": 0.01, ""max_depth"": 1, ""min_child_weight"": 5}",0.0746,0.0821,0.086,0.1714,0.1035,0.0809
+xgb,core + used cars + jet fuel,"{""n_estimators"": 300, ""learning_rate"": 0.01, ""max_depth"": 1, ""min_child_weight"": 5}",0.0751,0.0803,0.085,0.1742,0.1037,0.0801
+xgb,core,"{""n_estimators"": 100, ""learning_rate"": 0.01, ""max_depth"": 2, ""min_child_weight"": 10}",0.077,0.0773,0.0845,0.1812,0.105,0.0796
+xgb,core + used cars,"{""n_estimators"": 100, ""learning_rate"": 0.01, ""max_depth"": 1, ""min_child_weight"": 5}",0.0756,0.0776,0.0851,0.1841,0.1056,0.0794

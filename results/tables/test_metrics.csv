@@ -1,0 +1,8 @@
+method,"RMSE, all test months","RMSE, 2021","RMSE, 2022-2026","MAE, all test months","RMSE, nowcast rounded to 0.1",closer than the poll (share of months),DM statistic vs poll,DM p-value vs poll,DM statistic vs persistence,DM p-value vs persistence,months
+Last month's print (persistence),0.1757,0.3014,0.1343,0.1235,0.1757,0.2206,1.2787,0.2054,,,68
+Average of the last 12 prints,0.1803,0.3442,0.1187,0.1245,0.1847,0.3824,2.2161,0.0301,0.1829,0.8554,68
+Reuters poll (median),0.149,0.2677,0.1077,0.1015,0.149,,,,-1.2787,0.2054,68
+Linear regression,0.1471,0.2383,0.1188,0.1064,0.145,0.4265,-0.2202,0.8264,-1.4021,0.1655,68
+Random forest,0.1889,0.3675,0.1199,0.128,0.1859,0.3676,2.4983,0.0149,0.4929,0.6237,68
+Gradient boosting (XGBoost),0.1863,0.3612,0.1191,0.1242,0.1859,0.3529,2.3958,0.0194,0.399,0.6912,68
+Average of random forest and XGBoost,0.187,0.364,0.1187,0.1252,0.1879,0.3529,2.4175,0.0184,0.4255,0.6719,68

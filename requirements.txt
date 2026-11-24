@@ -1,0 +1,13 @@
+# Exact versions the published results were produced with (Python 3.13).
+# Looser versions also run; scores then differ in the fourth decimal (XGBoost's most).
+pandas==3.0.5
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+xgboost==3.4.1
+shap==0.54.1
+plotly==7.1.0
+openpyxl==3.1.5
+nbformat==5.11.1
+nbconvert==7.17.2
+ipykernel==7.4.0

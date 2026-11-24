@@ -1,0 +1,13 @@
+model,input set,chosen by CV,CV RMSE (before 2021),test RMSE,"test RMSE, 2021","test RMSE, 2022-2026"
+Linear regression,core + used cars,True,0.1012,0.1471,0.2383,0.1188
+Linear regression,core + jet fuel,False,0.1015,0.1658,0.3056,0.1157
+Linear regression,core + used cars + jet fuel,False,0.1015,0.1474,0.2453,0.1162
+Linear regression,core,False,0.1019,0.1682,0.3118,0.1164
+Random forest,core + jet fuel,True,0.1051,0.1889,0.3675,0.1199
+Random forest,core,False,0.1055,0.1889,0.3701,0.1182
+Random forest,core + used cars + jet fuel,False,0.1058,0.1798,0.2983,0.1421
+Random forest,core + used cars,False,0.1059,0.2089,0.3727,0.1524
+Gradient boosting (XGBoost),core + jet fuel,True,0.1035,0.1863,0.3612,0.1191
+Gradient boosting (XGBoost),core + used cars + jet fuel,False,0.1037,0.1779,0.3001,0.1384
+Gradient boosting (XGBoost),core,False,0.105,0.2005,0.3819,0.1326
+Gradient boosting (XGBoost),core + used cars,False,0.1056,0.201,0.3341,0.1586

@@ -1,0 +1,24 @@
+{
+  "core_cpi_lseg_first_release_poll.csv": {
+    "source": "LSEG Workspace, Economic Indicator Polls / Indicator Explorer, 'United States Core CPI MM, SA' (RIC USCPF=ECI; poll median pUSCPF=M)",
+    "how": "Table view (Period, Original Release Date, Actual (First Release), Reuters Poll) captured as screenshots on 20 Nov 2026 and transcribed; the Jun 2014 - Oct 2015 rows were captured twice and matched. The Excel add-in and the Python API were not available.",
+    "accessed": "2026-11-20"
+  },
+  "manheim_used_vehicle_value_index.xlsx": {
+    "source": "Cox Automotive, Manheim Used Vehicle Value Index data file (seasonally adjusted, Jan 1997 = 100)",
+    "how": "Downloaded by hand from Cox Automotive",
+    "accessed": "2026-11-21"
+  },
+  "fred_jet_fuel_monthly.csv": {
+    "source": "FRED series DJFUELUSGULF (Kerosene-Type Jet Fuel Prices: U.S. Gulf Coast, U.S. dollars per gallon, daily), monthly average computed by FRED",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DJFUELUSGULF&cosd=1999-01-01&fq=Monthly&fam=avg",
+    "accessed": "2026-11-21",
+    "sha256": "34aa5216eeab9ba93106a739e6eb8deab0199687c1507960b81a819d22b985c2"
+  },
+  "fred_cpi_used_cars.csv": {
+    "source": "FRED series CUSR0000SETA02 (CPI-U: Used Cars and Trucks, seasonally adjusted, 1982-84 = 100)",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUSR0000SETA02&cosd=1997-01-01",
+    "accessed": "2026-11-21",
+    "sha256": "8fea9bb57c45793dbfd10a882b3eb93900284d5654d26b6f1dcd2a6fc5a0aec9"
+  }
+}

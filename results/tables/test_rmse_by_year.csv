@@ -1,0 +1,7 @@
+period,Last month's print (persistence),Average of the last 12 prints,Reuters poll (median),Linear regression,Random forest,Gradient boosting (XGBoost),Average of random forest and XGBoost,months
+2021,0.3014,0.3442,0.2677,0.2383,0.3675,0.3612,0.364,12
+2022,0.2062,0.1803,0.1581,0.1987,0.1815,0.1823,0.181,12
+2023,0.0913,0.1014,0.0577,0.0709,0.0995,0.1018,0.0996,12
+2024,0.0764,0.0833,0.0764,0.0634,0.0843,0.0825,0.0821,12
+2025,0.1183,0.089,0.1183,0.0831,0.0929,0.0906,0.0913,10
+2026,0.1378,0.1065,0.1,0.1178,0.109,0.1036,0.1062,10

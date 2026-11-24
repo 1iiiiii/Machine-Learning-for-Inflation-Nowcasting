@@ -1,0 +1,5 @@
+{
+  "core prints used: all released before the nowcast date": true,
+  "months where Manheim's estimated release falls after the nowcast date": [],
+  "smallest gap, Manheim release to nowcast date (days)": 1
+}

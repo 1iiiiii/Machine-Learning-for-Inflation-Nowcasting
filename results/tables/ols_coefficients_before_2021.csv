@@ -1,0 +1,8 @@
+,coefficient,effect of a one-standard-deviation move
+"Core CPI, last month's print",0.4279,0.0457
+"Core CPI, average of the last 3 prints",-0.1783,-0.0136
+"Core CPI, average of the last 12 prints",0.0714,0.0024
+"Used-car prices, same month",0.013,0.0233
+"Used-car prices, one month earlier",0.0058,0.0103
+"Used-car prices, two months earlier",0.0019,0.0034
+intercept,0.0998,
