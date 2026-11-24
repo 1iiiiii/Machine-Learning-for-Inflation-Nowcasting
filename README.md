@@ -27,42 +27,6 @@ Published post: https://1iiiiii.github.io/Personal-Website/blog/posts/post10/
 
 October 2025 was never published (the BLS did not collect October prices during the government shutdown) and November 2025 was published only as a two-month change, so neither has a one-month first print. Both drop out as targets.
 
-## Setup
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-Python 3.13. `requirements.txt` pins the exact package versions the results were produced with; with those, every table reproduces exactly. The code also runs with older versions (tested with pandas 2.3, scikit-learn 1.7, XGBoost 3.2, SHAP 0.49): the choices made by cross-validation are the same and the scores differ only in the fourth decimal.
-
-Open the notebooks in VS Code with the `.venv` kernel selected. No API keys are needed. Every random draw starts from a fixed seed (6400). To download the two FRED files again, set `REFETCH = True` in notebook 01; the LSEG and Manheim files are manual downloads.
-
-## Replication
-
-Run the notebooks in `code/` in order; each reads the previous ones' output. Paths are built from `Path.cwd().parent`, so run them from `code/` (VS Code's default). Shared settings (inputs, folds, hyperparameter grids, seeds) live in `code/nowcast_setup.py`.
-
-| Notebook | Reads | Writes |
-|---|---|---|
-| `01_load.ipynb` | the four raw files | `data/processed/monthly.csv`; `results/tables/data_coverage.csv` |
-| `02_features.ipynb` | `monthly.csv` | `data/processed/features.csv`; `results/tables/design_checks_lead.csv`, `naive_benchmarks_before_2021.csv`, `timing_check.json` |
-| `03_tune.ipynb` | `features.csv`, months before 2021 only | `results/tables/cv_grid.csv`, `cv_best_by_feature_set.csv`, `cv_benchmarks.csv`, `cv_choice.json` |
-| `04_test.ipynb` | `features.csv`, `cv_choice.json`, `cv_best_by_feature_set.csv` | `data/processed/nowcasts.csv`; `results/tables/test_metrics.csv`, `test_rmse_by_year.csv`, `test_biggest_poll_misses.csv`, `test_feature_sets_not_used_for_choice.csv` |
-| `05_interpret.ipynb` | `features.csv`, `nowcasts.csv`, `cv_choice.json` | `results/tables/shap_values.csv`, `shap_importance.csv`, `shap_block_importance.csv`, `shap_2021.csv`, `ols_coefficients_before_2021.csv` |
-| `06_figures.ipynb` | `nowcasts.csv`, `test_metrics.csv`, `shap_values.csv` | `results/figures/fig1_nowcasts.html`, `fig2_errors.html`, `fig3_shap.html` (also copied into the post folder when the website repository sits next to this one) |
-
-From the terminal:
-
-```bash
-cd code
-for n in 01_load 02_features 03_tune 04_test 05_interpret 06_figures; do
-  jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 $n.ipynb
-done
-```
-
-Notebooks 03 and 04 take about two and a half minutes each; the rest a few seconds. A full re-run from an empty `data/processed/` and `results/` reproduced every table byte for byte, and a second run from a fresh copy with older package versions gave the same choices.
-
 ## Method
 
 **The nowcast day.** Each nowcast is made the day before that month's CPI release, which is roughly when the Reuters poll is collected, so the models and the poll work from the same information. An input is used only if it was published before that day (checked in notebook 02).
